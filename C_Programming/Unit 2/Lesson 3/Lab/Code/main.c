@@ -60,6 +60,7 @@ void main()
 		else
 			printf ("Wrong input");
 	}
+	break;
 	//lab2 if statement ( comparing 3 numbers )
 	case 5:
 	{
@@ -83,6 +84,7 @@ void main()
 		}
 
 	}
+	break;
 	// line condition : calculating the minimum of two numbers
 	case 6 :
 	{
@@ -92,6 +94,7 @@ void main()
 		scanf ("%d %d",&a,&b);
 		printf ("the minimum = %d",(a<b)?a:b);
 	}
+	break;
 	// for statement:calculating the sum of values between 1 and 99
 	case 7 :
 	{
@@ -103,6 +106,7 @@ void main()
 		}
 		printf ("the sum = %d",sum);
 	}
+	break;
 	// calculating average of student degrees
 	case 8:
 	{
@@ -121,6 +125,7 @@ void main()
 		avg=sum/num_student;
 		printf ("the average = %f",avg);
 	}
+	break;
 	//nested loop
 	case 9:
 	{
