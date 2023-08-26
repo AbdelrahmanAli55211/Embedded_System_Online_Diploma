@@ -2,6 +2,27 @@
 #include "string.h"
 #include "math.h"
 #define maxi 20
+void repeated_element(char *arr,int *max,char *ch)
+{
+    *max=0;
+    int max2;
+    for(int i=0;arr[i] !=0;i++ )
+    {
+        max2=0;
+        for(int j=1;arr[j] != 0;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                max2++;
+            }
+        }
+        if(max2>*max)
+        {
+            *max=max2;
+            *ch=arr[i];
+        }
+    }
+}
 int max_zeroes(unsigned int num)
 {
     int max=0,tmp,maxtmp,val=0;
@@ -589,6 +610,17 @@ int main()
         scanf("%d",&num);
         printf("Max zeroes= %d\n",max_zeroes(num));
     }
+    break;
+    //! Finding the most repeated element in an array of char
+    case 25:
+    {
+        char name[]="Abdelrahman Ali Gouda Mohamed";
+        int max;
+        char ch;
+        repeated_element(name,&max,&ch);
+        printf("The most repeated element is '%c' with %d times",ch,max);
+    }
+    break;
     }
     return 0;
 }
