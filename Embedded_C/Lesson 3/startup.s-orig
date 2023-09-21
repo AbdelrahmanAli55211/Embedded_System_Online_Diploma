@@ -1,0 +1,30 @@
+//startup.s for toggle led
+.section .vectors
+.word	0x20001000 //stack top address
+.word	_reset	//reset section to branch to main function
+.word	vector_handler //NMI
+.word	vector_handler //Hard fault
+.word	vector_handler //MM fault
+.word	vector_handler //Bus Fault
+.word	vector_handler //Usage Fault
+.word	vector_handler //reserved
+.word	vector_handler //reserved 
+.word	vector_handler //reserved
+.word	vector_handler //reserved
+.word	vector_handler //SV call
+.word	vector_handler //Debug reserved
+.word	vector_handler //reserved
+.word	vector_handler //pendSV
+.word	vector_handler //SysTick
+.word	vector_handler //IRQ0
+.word	vector_handler //IRQ1
+.word	vector_handler //IRQ2
+.word	vector_handler //IRQ67
+
+.section .text
+_reset:
+	bl main
+	b .
+.thumb_func  //option to the compiler to enable reading of 16 & 32 bit instructions 
+vector_handler:
+	b _reset
